@@ -1,0 +1,33 @@
+body {
+   min-height: 100vh;
+   font-size: 14px;
+   line-height: 24px;
+   font-weight: 300;
+   color: $accent;
+   @extend %sfp-300;
+}
+
+.container {
+   max-width: 1190px;
+   padding: 0 10px;
+   margin: 0 auto;
+}
+
+.title {
+   @extend %montserrat-700;
+   color: #242121;
+   font-size: 60px;
+   line-height: 75px;
+   padding-bottom: 18px;
+   align-self: flex-start;
+   position: relative;
+   &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #FCBB08;
+   }
+}
