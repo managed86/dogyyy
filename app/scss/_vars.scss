@@ -3,69 +3,69 @@ $title:#242121;
 $sub-title:#333333;
 $white:#fff;
 %opensans-300 {
-   font-family: 'OpenSans', sans-serif;
-   font-weight: 300;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 300;
 }
 
 %opensans-400 {
-   font-family: 'OpenSans', sans-serif;
-   font-weight: 400;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 400;
 }
 
 %opensans-700 {
-   font-family: 'OpenSans', sans-serif;
-   font-weight: 700;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 700;
 }
 
 %opensans-600 {
-   font-family: 'OpenSans', sans-serif;
-   font-weight: 600;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 600;
 }
 
 %merriweather-300 {
-   font-family: 'Merriweather', sans-serif;
-   font-weight: 300;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 300;
 }
 
 %montserrat-700 {
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 %montserrat-300 {
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
 %montserrat-400 {
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 %montserrat-500 {
-   font-family: 'Montserrat', sans-serif;
-   font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
 }
 
 %sfp-700 {
-   font-family: 'SFProDisplay', sans-serif;
-   font-weight: 700;
+    font-family: 'SFProDisplay', sans-serif;
+    font-weight: 700;
 }
 
 %sfp-300 {
-   font-family: 'SFProDisplay', sans-serif;
-   font-weight: 300;
+    font-family: 'SFProDisplay', sans-serif;
+    font-weight: 300;
 }
 
 %raleway-700 {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
 }
 
 @function max($numbers...) {
-   @return m#{a}x(#{$numbers});
+    @return m#{a}x(#{$numbers});
 }
 
 @function min($numbers...) {
-   @return m#{i}n(#{$numbers});
+    @return m#{i}n(#{$numbers});
 }
