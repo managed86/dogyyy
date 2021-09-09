@@ -6,6 +6,7 @@
 @import 'libs';
 // header start
 .header {
+    // position: relative;
     &__top-inner {
         background-color: #fff;
         display: flex;
@@ -22,6 +23,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            min-height: calc(100vh - 64px);
+        }
     }
     &__title {
         margin-top: auto;
@@ -31,6 +35,15 @@
         font-size: 72px;
         line-height: 88px;
         margin-bottom: 20px;
+        @media (max-width: 768px) {
+            font-size: 50px;
+            line-height: 65px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 440px) {
+            font-size: 35px;
+            line-height: 40px;
+        }
     }
     &__subtitle {
         @extend %montserrat-700;
@@ -39,6 +52,14 @@
         letter-spacing: 2.74286px;
         color: #FCBB08;
         margin-bottom: auto;
+        @media (max-width: 768px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        @media (max-width: 768px) {
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
     &__icon {
         margin-bottom: 62px;
@@ -47,12 +68,87 @@
 
 .menu {
     margin: auto 0;
+    &__burger {
+        display: none;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        transition: all 330ms ease-out;
+        &::after,
+        &::before {
+            content: "";
+            width: 50%;
+            height: 4px;
+            background-color: #000;
+            border-radius: 5px;
+            position: absolute;
+        }
+        &::after {
+            top: 0;
+            left: 0;
+        }
+        &::before {
+            bottom: 0;
+            right: 0;
+        }
+        span {
+            display: block;
+            height: 4px;
+            width: 30px;
+            background-color: #000;
+            border-radius: 5px;
+            position: absolute;
+            top: 13px;
+        }
+        &.active {
+            transform: rotate(-45deg);
+        }
+        &.active::after,
+        &.active::before {
+            transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+        }
+        &.active::after {
+            transform-origin: right;
+            transform: rotate(-90deg) translateX(2px);
+        }
+        &.active::before {
+            transform-origin: left;
+            transform: rotate(-90deg) translateX(-2px);
+        }
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
     &__list {
         display: flex;
+        @media (max-width: 767px) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 64px;
+            background-color: rgba(0, 0, 0, .9);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 64px);
+            transform: translateY(-200%);
+            transition: transform .6s linear;
+        }
+        &.active {
+            transform: translateY(0%);
+        }
     }
     &__list-item {
+        @media (max-width: 767px) {
+            width: 100%;
+            text-align: center;
+        }
         &+& {
             margin-left: 32px;
+            @media (max-width: 767px) {
+                margin-left: 0;
+                margin-top: 10px;
+            }
         }
     }
     &__list-link {
@@ -66,14 +162,29 @@
         text-decoration: none;
         border-bottom: 1px solid transparent;
         transition: border-bottom .5s;
+        cursor: pointer;
         &:hover {
             border-bottom: 1px solid #FCBB08;
+        }
+        @media (max-width: 767px) {
+            display: block;
+            padding: 15px 10px;
+            color: #FCBB08;
+        }
+        @media (max-height: 414px) {
+            padding: 10px 10px;
+        }
+        @media (max-height: 320px) {
+            padding: 5px 10px;
         }
     }
 }
 
 .logo {
     margin-bottom: 29px;
+    @media (max-width: 767px) {
+        margin-bottom: 0;
+    }
 }
 
 .about {
