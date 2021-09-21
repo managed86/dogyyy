@@ -1,8 +1,18 @@
 $(function() {
 
-    $('.menu__burger').on('click', (function() {
+    $('.menu__burger, .menu__list a').on('click', (function() {
         $('.menu__burger, .menu__list').toggleClass('active');
     }));
+
+    // $(document).scroll(function() {
+    //     var menu = $(".header__top-inner");
+    //     var top = $(this).scrollTop();
+    //     if (top >= 100) {
+    //         $(".header__top-inner").css('background-color', '#fff');
+    //     } else if (top <= 200) {
+    //         $(".header__top-inner").css('background-color', 'yellow');
+    //     }
+    // });
 
     // Проверяем, можно ли использовать Webp формат
     function canUseWebp() {
@@ -43,6 +53,24 @@ $(function() {
         }
     };
 
+
+    $(".menu a, .header__icon, .footer__gotop").on("click", function(event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+
+        //забираем идентификатор бока с атрибута href
+        var id = $(this).attr('href'),
+
+            //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({ scrollTop: top }, 1500);
+    });
+
+
+
+
     $('[data-fancybox]').fancybox({
         youtube: {
             controls: 0,
@@ -57,8 +85,21 @@ $(function() {
         dots: true,
         prevArrow: '<button type="button" class="slick-prev"> <img src="images/arrow-left.svg"> </button>',
         nextArrow: '<button type="button" class="slick-next"> <img src="images/arrow-right.svg"> </button>',
-    });
+        responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: false
+                        // dots: false
+                }
+            }
 
+        ]
+    });
+    // $('.portfolio__content').masonry({
+    //     // options
+    //     itemSelector: '.portfolio__item',
+    //     columnWidth: 343
+    // });
 
     var mixer = mixitup('.portfolio__content');
 });
